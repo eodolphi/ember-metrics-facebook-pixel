@@ -11,7 +11,9 @@
     "start": "ember server",
     "test": "ember try:testall"
   },
-  "repository": "",
+  "repository": "https://github.com/eodolphi/ember-metrics-facebook-pixel",
+  "bugs": "https://github.com/eodolphi/ember-metrics-facebook-pixel/issues",
+  "homepage": "https://github.com/eodolphi/ember-metrics-facebook-pixel",
   "engines": {
     "node": ">= 0.10.0"
   },
