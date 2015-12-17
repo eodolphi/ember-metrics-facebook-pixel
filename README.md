@@ -1,25 +1,21 @@
 # Ember-metrics-facebook
 
-This README outlines the details of collaborating on this Ember addon.
+Ember metrics adapter for Facebook Pixel.
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+`ember install ember-metrics-facebook-pixel`
 
-## Running
+## Configuration
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+Add the following to your ember-metrics configuration 
 
-## Running Tests
+```
 
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+  {
+        name: 'FacebookPixel',
+        environments: ['all'], // default
+        config: {
+          id: '<your pixel id>'
+  }
+```
