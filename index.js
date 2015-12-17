@@ -2,5 +2,5 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-metrics-facebook'
+  name: 'ember-metrics-facebook-pixel'
 };
