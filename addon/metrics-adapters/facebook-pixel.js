@@ -33,7 +33,7 @@ export default BaseAdapter.extend({
     const event = options.event;
     const props = without(options, 'event');
 
-    if (Ember.keys(props).length > 0) {
+    if (Object.keys(props).length > 0) {
       window.fbq('track', event, props);
     } else {
       window.fbq('track', event);
@@ -41,7 +41,7 @@ export default BaseAdapter.extend({
   },
 
   trackPage(options={}) {
-    if (Ember.keys(options).length > 0) {
+    if (Object.keys(options).length > 0) {
       window.fbq('track', 'PageView', options);
     } else {
       window.fbq('track', 'PageView');
