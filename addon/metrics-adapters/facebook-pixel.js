@@ -40,6 +40,16 @@ export default BaseAdapter.extend({
     }
   },
 
+  trackCustom(options={}) {
+    const event = options.event;
+    const props = without(options, 'event');
+    if (Ember.keys(props).length > 0) {
+      window.fbq('trackCustom', event, props);
+    } else {
+      window.fbq('trackCustom', event);
+    }
+  },
+
   trackPage(options={}) {
     if (Object.keys(options).length > 0) {
       window.fbq('track', 'PageView', options);
@@ -53,6 +63,3 @@ export default BaseAdapter.extend({
     delete window.fbq;
   }
 });
-
-
-
