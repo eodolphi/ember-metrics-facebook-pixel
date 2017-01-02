@@ -26,7 +26,6 @@ test('trackEvent calls fbq correctly', function(assert) {
   assert.ok(stub.calledWith('track', 'testEvent'), 'fbq is called correctly');
 });
 
-
 test('trackEvent calls fbq with the correct options', function(assert) {
   const adapter = this.subject({ config });
   const stub = sandbox.stub(window, 'fbq', () => {});
@@ -42,6 +41,31 @@ test('trackEvent calls fbq with the correct options', function(assert) {
   );
 });
 
+test('trackCustom calls fbq correctly', function(assert) {
+  const adapter = this.subject({ config });
+  const stub = sandbox.stub(window, 'fbq', () => {});
+
+  adapter.trackCustom({
+    event: 'testCustomEvent'
+  });
+
+  assert.ok(stub.calledWith('trackCustom', 'testCustomEvent'), 'fbq is called correctly');
+});
+
+test('trackCustom calls fbq with the correct options', function(assert) {
+  const adapter = this.subject({ config });
+  const stub = sandbox.stub(window, 'fbq', () => {});
+
+  adapter.trackCustom({
+    event: 'testCustomEvent',
+    testOption: 'test'
+  });
+
+  assert.ok(
+      stub.calledWith('trackCustom', 'testCustomEvent', {testOption: 'test'}),
+      'fbq is called with the correct options'
+  );
+});
 
 test('#trackPage calls fbq correctly', function(assert) {
   const adapter = this.subject({ config });
